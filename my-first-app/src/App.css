@@ -1,0 +1,70 @@
+/* src/App.css */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Растягивает контейнер на всю высоту экрана */
+  width: 100%;
+}
+.home-page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.category-info {
+  font-size: 18px;
+  color: #4b5563;
+  text-align: center;
+}
+
+.main-content {
+  flex: 1 0 auto; /* Позволяет контенту занимать всё свободное место, выталкивая футер вниз */
+  padding: 40px 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.page-description {
+  margin-top: 10px;
+  color: #4b5563;
+  font-size: 16px;
+}
+/* src/App.css */
+:root {
+  --bg-dark: #0f172a;       /* Глубокий темно-синий */
+  --card-bg: #1e293b;       /* Цвет карточек */
+  --accent-blue: #3b82f6;   /* Яркий синий */
+  --text-main: #f8fafc;     /* Белый текст */
+  --text-muted: #94a3b8;    /* Серый текст */
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  margin: 0;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
