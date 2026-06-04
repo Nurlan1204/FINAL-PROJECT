@@ -36,7 +36,7 @@ export const MainPage: React.FC<MainPageProps> = ({
     const loadProducts = async () => {
       try {
         const data = await getProducts();
-        setProducts(data);
+        setProducts(data.products);
       } catch (error) {
         console.error(
           'Ошибка загрузки товаров:',
@@ -161,10 +161,10 @@ export const MainPage: React.FC<MainPageProps> = ({
           ) : (
             <div className="products-grid">
               {processedProducts.map((product) => {
-                const quantityInCart = getProductQuantity(product.id);
+                const quantityInCart = getProductQuantity((product as any)._id);
 
                 return (
-                  <div key={product.id} className="product-card" onClick={() => setSelectedProduct({ ...product, title: (product as any).title ?? (product as any).name, description: '', inStock: 1, category: product.category as 'clothing' | 'shoes' | 'equipment' | 'accessories' })}>
+                  <div key={(product as any)._id} className="product-card" onClick={() => setSelectedProduct({ ...product, title: (product as any).title ?? (product as any).name, description: '', inStock: 1, category: product.category as 'clothing' | 'shoes' | 'equipment' | 'accessories' })}>
                     <div className="product-image-wrapper">
                       <img src={product.image} alt={(product as any).title ?? (product as any).name} className="product-img" />
                       <span className="product-rating">★ {product.rating}</span>
@@ -181,11 +181,11 @@ export const MainPage: React.FC<MainPageProps> = ({
                         {quantityInCart > 0 ? (
                           <div className="cart-controls-wrapper" onClick={(e) => e.stopPropagation()}>
                             <div className="quantity-counter-container">
-                              <button className="counter-btn minus" onClick={() => onRemoveFromCart(product.id)}>−</button>
+                              <button className="counter-btn minus" onClick={() => onRemoveFromCart((product as any)._id)}>−</button>
                               <span className="counter-value">{quantityInCart}</span>
-                              <button className="counter-btn plus" onClick={() => onAddToCart(product.id)}>+</button>
+                              <button className="counter-btn plus" onClick={() => onAddToCart((product as any)._id)}>+</button>
                             </div>
-                            <button className="delete-product-btn" onClick={() => onClearFromCart(product.id)} title="Удалить из корзины">
+                            <button className="delete-product-btn" onClick={() => onClearFromCart((product as any)._id)} title="Удалить из корзины">
                               🗑️
                             </button>
                           </div>
@@ -194,7 +194,7 @@ export const MainPage: React.FC<MainPageProps> = ({
                             className="add-to-cart-btn"
                             onClick={(e) => {
                               e.stopPropagation();
-                              onAddToCart(product.id);
+                              onAddToCart((product as any)._id);
                             }}
                           >
                             В корзину
