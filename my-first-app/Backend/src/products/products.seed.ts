@@ -1,0 +1,103 @@
+import mongoose from 'mongoose';
+
+const uri =
+  process.env.MONGO_URI!;
+
+const products = [
+  {
+    name: 'Nike Air Max 270',
+    brand: 'Nike',
+    category: 'Running',
+    image: '/products/nike-air-max-270.jpg',
+    price: 12990,
+    rating: 4.8,
+  },
+  {
+    name: 'Nike Revolution 7',
+    brand: 'Nike',
+    category: 'Running',
+    image: '/products/nike-revolution-7.jpg',
+    price: 8990,
+    rating: 4.6,
+  },
+  {
+    name: 'Adidas Ultraboost Light',
+    brand: 'Adidas',
+    category: 'Running',
+    image: '/products/adidas-ultraboost.jpg',
+    price: 14990,
+    rating: 4.9,
+  },
+  {
+    name: 'Adidas Duramo SL',
+    brand: 'Adidas',
+    category: 'Running',
+    image: '/products/adidas-duramo.jpg',
+    price: 7990,
+    rating: 4.5,
+  },
+  {
+    name: 'Puma Velocity Nitro',
+    brand: 'Puma',
+    category: 'Running',
+    image: '/products/puma-velocity.jpg',
+    price: 10990,
+    rating: 4.7,
+  },
+  {
+    name: 'Under Armour Charged Assert',
+    brand: 'Under Armour',
+    category: 'Running',
+    image: '/products/ua-assert.jpg',
+    price: 9990,
+    rating: 4.6,
+  },
+  {
+    name: 'New Balance 574',
+    brand: 'New Balance',
+    category: 'Lifestyle',
+    image: '/products/nb-574.jpg',
+    price: 11990,
+    rating: 4.8,
+  },
+  {
+    name: 'New Balance Fresh Foam X',
+    brand: 'New Balance',
+    category: 'Running',
+    image: '/products/nb-fresh-foam.jpg',
+    price: 13990,
+    rating: 4.9,
+  },
+  {
+    name: 'Yoga Mat Pro',
+    brand: 'MegaSport',
+    category: 'Fitness',
+    image: '/products/yoga-mat.jpg',
+    price: 2490,
+    rating: 4.7,
+  },
+  {
+    name: 'Dumbbell 10kg',
+    brand: 'MegaSport',
+    category: 'Fitness',
+    image: '/products/dumbbell-10kg.jpg',
+    price: 3990,
+    rating: 4.8,
+  },
+  {
+    name: 'Resistance Bands Set',
+    brand: 'MegaSport',
+    category: 'Fitness',
+    image: '/products/bands.jpg',
+    price: 1490,
+    rating: 4.6,
+  },
+  {
+    name: 'Kettlebell 16kg',
+    brand: 'MegaSport',
+    category: 'Fitness',
+    image: '/products/kettlebell.jpg',
+    price: 4990,
+    rating: 4.8,
+  },
+];

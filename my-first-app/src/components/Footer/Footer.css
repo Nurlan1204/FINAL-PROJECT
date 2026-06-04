@@ -1,0 +1,90 @@
+/* src/components/Footer/Footer.css */
+.site-footer {
+  background-color: #0a0a0a;
+  color: #94a3b8;
+  padding: 60px 40px 20px 40px;
+  margin-top: auto; /* Отодвигает футер вниз, если контента мало */
+  border-top: 1px solid #111;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section h3 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.footer-section h3 span {
+  color: #a3e635;
+}
+
+.footer-section h4 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.footer-section p {
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #a3e635;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+}
+
+.payment-methods span {
+  margin-left: 15px;
+  font-size: 16px;
+}
+
+/* Адаптивность для мобилок */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
