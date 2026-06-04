@@ -13,9 +13,7 @@ import { CreateProductDto } from './dto/create-product.dto';
 
 @Controller('products')
 export class ProductsController {
-  constructor(
-    private readonly productsService: ProductsService,
-  ) {}
+  constructor(private readonly productsService: ProductsService) {}
 
   @Post('seed')
   seed() {
@@ -23,23 +21,20 @@ export class ProductsController {
   }
 
   @Post()
-  create(
-    @Body() createProductDto: CreateProductDto,
-  ) {
-    return this.productsService.create(
-      createProductDto,
-    );
+  create(@Body() createProductDto: CreateProductDto) {
+    return this.productsService.create(createProductDto);
   }
+  
+@Post('bulk')
+createMany(
+  @Body() products: CreateProductDto[],
+) {
+  return this.productsService.createMany(products);
+}
 
   @Get()
-  findAll(
-    @Query('page') page = '1',
-    @Query('limit') limit = '10',
-  ) {
-    return this.productsService.findAll(
-      Number(page),
-      Number(limit),
-    );
+  findAll(@Query('page') page = '1', @Query('limit') limit = '10') {
+    return this.productsService.findAll(Number(page), Number(limit));
   }
 
   @Get(':id')

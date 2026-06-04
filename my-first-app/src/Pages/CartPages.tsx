@@ -43,7 +43,7 @@ export const CartPage: React.FC<CartPageProps> = ({
   // Собираем полную информацию о товарах, которые лежат в корзине
   const cartProducts = cart
     .map((item) => {
-      const product = products.find((p) => p.id === item.id);
+      const product = products?.find((p) => p.id === item.id);
       if (!product) return null;
 
       return {
