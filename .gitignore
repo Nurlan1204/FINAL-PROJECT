@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.vscode/
+.env
+.env.local
+*.log
+Backend/node_modules/
+Backend/dist/
+Backend/.vscode/
+Backend/.env
+Backend/.env.local
+Backend/*.log
